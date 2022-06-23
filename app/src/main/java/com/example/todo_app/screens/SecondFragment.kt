@@ -1,4 +1,4 @@
-package com.example.todo_app
+package com.example.todo_app.screens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,8 +22,6 @@ class SecondFragment : Fragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-    binding.buttonSecond.setOnClickListener {
-    }
   }
 
   override fun onDestroyView() {

@@ -3,6 +3,7 @@ package com.example.todo_app
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.todo_app.databinding.ActivityMainBinding
+import com.example.todo_app.screens.GroupFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     supportFragmentManager
       .beginTransaction()
-      .add(R.id.nav_host_fragment_content_main, FirstFragment())
+      .add(R.id.nav_host_fragment_content_main, GroupFragment())
       .commit()
   }
 
