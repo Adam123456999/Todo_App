@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_app.TodoAdapter
 import com.example.todo_app.databinding.FragmentGroupBinding
-import com.example.todo_app.todoList
 
 
 class GroupFragment : Fragment() {

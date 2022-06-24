@@ -1,0 +1,3 @@
+<resources>
+    <integer name="text_length">100</integer>
+</resources>
