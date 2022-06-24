@@ -1,5 +1,6 @@
 package com.example.todo_app
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,15 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
   }
 
   override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-    holder.itemView.tv_group_item_todo_text.text = todoList[position]
+    holder.itemView.check_box_group_item.text = todoList[position]
+
+    holder.itemView.check_box_group_item.setOnClickListener {
+      if (holder.itemView.check_box_group_item.isChecked) {
+        holder.itemView.check_box_group_item.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+      } else {
+        holder.itemView.check_box_group_item.paintFlags = Paint.ANTI_ALIAS_FLAG
+      }
+    }
   }
 
   override fun getItemCount(): Int = todoList.size

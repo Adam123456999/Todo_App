@@ -34,10 +34,10 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="#757575"
+        android:maxLength="@integer/text_length"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_fragment_group_add_todo"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/btn_fragment_group_add_todo"
