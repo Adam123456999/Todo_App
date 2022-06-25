@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todo_app.TodoAdapter
+import com.example.todo_app.adapter.TodoAdapter
 import com.example.todo_app.databinding.FragmentTodoBinding
 
 

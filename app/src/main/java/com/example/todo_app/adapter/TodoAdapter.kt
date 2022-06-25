@@ -1,10 +1,12 @@
-package com.example.todo_app
+package com.example.todo_app.adapter
 
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todo_app.R
+import com.example.todo_app.todoList
 import kotlinx.android.synthetic.main.todo_item.view.*
 
 class TodoAdapter : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
