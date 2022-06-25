@@ -30,7 +30,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="@string/todo_name"
+        android:hint="@string/group_name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textColorHint="#757575"
