@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     supportFragmentManager
       .beginTransaction()
-      .add(R.id.nav_host_fragment_content_main, GroupFragment())
+      .add(R.id.fragment_container, GroupFragment())
       .commit()
   }
 
