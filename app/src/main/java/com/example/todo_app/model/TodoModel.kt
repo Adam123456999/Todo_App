@@ -1,4 +1,4 @@
-package com.example.todo_app.models
+package com.example.todo_app.model
 
 data class TodoModel(
   val name: String

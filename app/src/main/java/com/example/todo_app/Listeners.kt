@@ -1,7 +1,7 @@
 package com.example.todo_app
 
-import com.example.todo_app.models.GroupModel
-import com.example.todo_app.models.TodoModel
+import com.example.todo_app.model.GroupModel
+import com.example.todo_app.model.TodoModel
 
 interface GroupListener {
   fun onClick(group: GroupModel)

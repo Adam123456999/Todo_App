@@ -8,7 +8,7 @@ import com.example.todo_app.GroupListener
 import com.example.todo_app.R
 import com.example.todo_app.databinding.GroupItemBinding
 import com.example.todo_app.groups
-import com.example.todo_app.models.GroupModel
+import com.example.todo_app.model.GroupModel
 
 class GroupAdapter(private val listener: GroupListener) : RecyclerView.Adapter<GroupAdapter.GroupViewHolder>() {
 

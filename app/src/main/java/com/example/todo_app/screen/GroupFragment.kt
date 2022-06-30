@@ -1,4 +1,4 @@
-package com.example.todo_app.screens
+package com.example.todo_app.screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import com.example.todo_app.GroupListener
 import com.example.todo_app.R
 import com.example.todo_app.adapter.GroupAdapter
 import com.example.todo_app.databinding.FragmentGroupBinding
-import com.example.todo_app.models.GroupModel
+import com.example.todo_app.model.GroupModel
 
 
 class GroupFragment : Fragment(), GroupListener {
