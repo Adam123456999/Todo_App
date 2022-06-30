@@ -1,4 +1,4 @@
-package com.example.todo_app.screen
+package com.example.todo_app.screen.group
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import com.example.todo_app.R
 import com.example.todo_app.adapter.GroupAdapter
 import com.example.todo_app.databinding.FragmentGroupBinding
 import com.example.todo_app.model.GroupModel
+import com.example.todo_app.screen.todo.TodoFragment
 
 
 class GroupFragment : Fragment(), GroupListener {
