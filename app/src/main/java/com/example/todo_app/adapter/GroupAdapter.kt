@@ -16,8 +16,9 @@ class GroupAdapter(private val listener: GroupListener) : RecyclerView.Adapter<G
     private val binding = GroupItemBinding.bind(view)
 
     fun bind(group: GroupModel, listener: GroupListener) = with(binding) {
-      tvGroupItem.text = group.name
-      tvGroupItem.setOnClickListener {
+      tvAmountGroupItem.text = if (group.todos.size != 0) group.todos.size.toString() else ""
+      tvTitleGroupItem.text = group.name
+      root.setOnClickListener {
         listener.onClick(group)
       }
     }
