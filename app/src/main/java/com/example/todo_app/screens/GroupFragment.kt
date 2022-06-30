@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todo_app.GroupListener
 import com.example.todo_app.R
 import com.example.todo_app.adapter.GroupAdapter
 import com.example.todo_app.databinding.FragmentGroupBinding
+import com.example.todo_app.models.GroupModel
 
 
-class GroupFragment : Fragment(), GroupAdapter.Listener {
+class GroupFragment : Fragment(), GroupListener {
 
   private var _binding: FragmentGroupBinding? = null
   private val binding get() = _binding!!
@@ -43,11 +45,11 @@ class GroupFragment : Fragment(), GroupAdapter.Listener {
     _binding = null
   }
 
-  override fun onClick(group: String) {
+  override fun onClick(group: GroupModel) {
     parentFragmentManager
       .beginTransaction()
       .addToBackStack(null)
-      .replace(R.id.fragment_container, TodoFragment())
+      .replace(R.id.fragment_container, TodoFragment(group))
       .commit()
   }
 
