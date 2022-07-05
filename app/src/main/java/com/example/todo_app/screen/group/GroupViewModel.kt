@@ -12,14 +12,14 @@ class GroupViewModel(application: Application) : AndroidViewModel(application) {
 
   fun initDatabase() = DB.initDatabase(context)
 
-  fun getAllGroups(): List<GroupModel> = DB.groupRepository.getAllGroups()
+  fun getAllGroups(): List<GroupModel> = DB.getAllGroups()
 
   fun addGroup(groupModel: GroupModel): List<GroupModel> {
-    DB.groupRepository.insertGroup(groupModel)
+    DB.addGroup(groupModel)
     return getAllGroups()
   }
   fun deleteGroup(groupModel: GroupModel): List<GroupModel> {
-    DB.groupRepository.deleteGroup(groupModel)
+    DB.deleteGroup(groupModel)
     return getAllGroups()
   }
 }
