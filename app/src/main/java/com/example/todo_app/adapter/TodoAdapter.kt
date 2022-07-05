@@ -8,20 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_app.R
 import com.example.todo_app.TodoListener
 import com.example.todo_app.databinding.TodoItemBinding
-import com.example.todo_app.models.GroupModel
-import com.example.todo_app.models.TodoModel
-import kotlinx.android.synthetic.main.todo_item.view.*
+import com.example.todo_app.model.GroupModel
+import com.example.todo_app.model.TodoModel
 
 class TodoAdapter(
   private val group: GroupModel,
   private val listener: TodoListener
 ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
+  private var todoList = emptyList<TodoModel>()
+
   class TodoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = TodoItemBinding.bind(view)
 
     fun bind(todo: TodoModel, listener: TodoListener) = with(binding) {
-      checkBoxTodoItem.text = todo.name
+      checkBoxTodoItem.text = todo.title
       checkBoxTodoItem.setOnClickListener {
         if (checkBoxTodoItem.isChecked) {
           checkBoxTodoItem.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
@@ -39,13 +40,13 @@ class TodoAdapter(
   }
 
   override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-    holder.bind(group.todos[position], listener)
+    holder.bind(todoList[position], listener)
   }
 
-  override fun getItemCount(): Int = group.todos.size
+  override fun getItemCount(): Int = todoList.size
 
-  fun addTodo(todo: String) {
-    group.todos.add(TodoModel(todo))
+  fun setList(list: List<TodoModel>) {
+    todoList = list
     notifyDataSetChanged()
   }
 }

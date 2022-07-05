@@ -1,4 +1,4 @@
-package com.example.todo_app.screens
+package com.example.todo_app.screen.todo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_app.TodoListener
 import com.example.todo_app.adapter.TodoAdapter
 import com.example.todo_app.databinding.FragmentTodoBinding
-import com.example.todo_app.models.GroupModel
-import com.example.todo_app.models.TodoModel
+import com.example.todo_app.model.GroupModel
+import com.example.todo_app.model.TodoModel
 
 
 class TodoFragment(
@@ -37,7 +37,7 @@ class TodoFragment(
 
     binding.btnAddTodoFragmentTodo.setOnClickListener {
       if (binding.inputTextFragmentTodo.text.isNotEmpty()) {
-        adapter.addTodo(binding.inputTextFragmentTodo.text.toString())
+//        adapter.setList(binding.inputTextFragmentTodo.text.toString())
         binding.inputTextFragmentTodo.text.clear()
       }
     }
