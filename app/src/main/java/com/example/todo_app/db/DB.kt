@@ -8,8 +8,8 @@ import com.example.todo_app.model.GroupModel
 import com.example.todo_app.model.TodoModel
 
 object DB {
-  lateinit var groupRepository: RoomGroupRepository
-  lateinit var todoRepository: RoomTodoRepository
+  private lateinit var groupRepository: RoomGroupRepository
+  private lateinit var todoRepository: RoomTodoRepository
   private var _database: AppDatabase ?= null
   private val database get() = _database!!
 
