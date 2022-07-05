@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_app.TodoListener
 import com.example.todo_app.adapter.TodoAdapter
@@ -21,14 +22,15 @@ class TodoFragment(
   private val binding get() = _binding!!
   private lateinit var recyclerView: RecyclerView
   private lateinit var adapter: TodoAdapter
+  private lateinit var viewModel: TodoViewModel
 
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
     _binding = FragmentTodoBinding.inflate(inflater, container, false)
-    adapter = TodoAdapter(groupModel, this)
-    recyclerView = binding.rvFragmentTodoList
-    recyclerView.adapter = adapter
+
+    init()
+
     return binding.root
   }
 
@@ -37,7 +39,10 @@ class TodoFragment(
 
     binding.btnAddTodoFragmentTodo.setOnClickListener {
       if (binding.inputTextFragmentTodo.text.isNotEmpty()) {
-//        adapter.setList(binding.inputTextFragmentTodo.text.toString())
+        adapter.setList(viewModel.addTodo(TodoModel(
+          groupId = groupModel.id,
+          title = binding.inputTextFragmentTodo.text.toString()
+        )))
         binding.inputTextFragmentTodo.text.clear()
       }
     }
@@ -50,5 +55,14 @@ class TodoFragment(
 
   override fun onClick(todo: TodoModel) {
 
+  }
+
+  private fun init() {
+    viewModel = ViewModelProvider(this).get(TodoViewModel::class.java)
+    adapter = TodoAdapter(groupModel, this)
+    recyclerView = binding.rvFragmentTodoList
+    recyclerView.adapter = adapter
+
+    adapter.setList(viewModel.getTodosByGroupId(groupModel.id))
   }
 }
