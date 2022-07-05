@@ -7,17 +7,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_app.GroupListener
 import com.example.todo_app.R
 import com.example.todo_app.databinding.GroupItemBinding
-import com.example.todo_app.groups
 import com.example.todo_app.model.GroupModel
 
 class GroupAdapter(private val listener: GroupListener) : RecyclerView.Adapter<GroupAdapter.GroupViewHolder>() {
+
+  private var groupList = emptyList<GroupModel>()
 
   class GroupViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private val binding = GroupItemBinding.bind(view)
 
     fun bind(group: GroupModel, listener: GroupListener) = with(binding) {
-      tvAmountGroupItem.text = if (group.todos.size != 0) group.todos.size.toString() else ""
-      tvTitleGroupItem.text = group.name
+//      tvAmountGroupItem.text = if (group.todos.size != 0) group.todos.size.toString() else ""
+      tvTitleGroupItem.text = group.title
       root.setOnClickListener {
         listener.onClick(group)
       }
@@ -30,13 +31,13 @@ class GroupAdapter(private val listener: GroupListener) : RecyclerView.Adapter<G
   }
 
   override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
-    holder.bind(groups[position], listener)
+    holder.bind(groupList[position], listener)
   }
 
-  override fun getItemCount(): Int = groups.size
+  override fun getItemCount(): Int = groupList.size
 
-  fun addGroup(groupName: String) {
-    groups.add(GroupModel(name = groupName))
+  fun setList(list: List<GroupModel>) {
+    groupList = list
     notifyDataSetChanged()
   }
 

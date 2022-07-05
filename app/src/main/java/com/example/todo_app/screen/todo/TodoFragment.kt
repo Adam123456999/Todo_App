@@ -37,7 +37,7 @@ class TodoFragment(
 
     binding.btnAddTodoFragmentTodo.setOnClickListener {
       if (binding.inputTextFragmentTodo.text.isNotEmpty()) {
-        adapter.addTodo(binding.inputTextFragmentTodo.text.toString())
+//        adapter.setList(binding.inputTextFragmentTodo.text.toString())
         binding.inputTextFragmentTodo.text.clear()
       }
     }
